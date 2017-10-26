@@ -1,0 +1,52 @@
+<%= render 'partial/navbar' %>
+
+<div class="container-fluid">
+      <div class="row o-3column">
+        <div class="col-md-3">
+        <div class="box">
+                  <h2>サイドバー１</h2>
+                  
+         </div>
+    </div>
+        <div class="col-md-6 col-md-offset-1">
+        <div class="panel panel-default">
+				<div class="panel-heading">
+					提案作成
+				</div>
+			
+				<div class="panel-body">			
+					<!-- 予約フォーム -->  
+                            <%= form_for [@listing, @listing.proposals.new] do |f| %>       
+                                           
+                                <!-- これは、予約をするときに、一緒におくる、データです。-->
+                                <%= f.hidden_field :listing_id, value: @listing.id %>
+
+                                
+                                        <label>提案内容</label>
+                                <%= f.text_area :proposal_content, rows: 8, placeholder: "内容について記述してください", class: "form-control", required: "true" %>
+                                    
+
+                                    
+                                        <label>料金</label>
+                                <%= f.text_field :proposal_price, placeholder: "1000", class: "form-control", required: "true" %>
+      
+
+                                
+                                    <%= f.submit "提案する", class: "btn btn-danger btn-wide"%>
+                                
+                            <% end %>
+				</div>
+			</div>
+		
+
+    </div>
+        <div class="col-md-2">
+        <div class="box">
+                  <h2>サイドバー２</h2>
+                  
+         </div>
+    </div>
+      </div>
+    </div>
+
+

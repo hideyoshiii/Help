@@ -1,0 +1,67 @@
+<%= render 'partial/navbar' %>
+
+                       
+<div class="container-fluid">
+  <div class="row o-3column">
+    <div class="col-md-3">
+      <div class="box">
+        <h2>サイドバー１</h2>         
+      </div> 
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
+      <div class="panel panel-default">
+<div class="panel-heading">
+        <%= link_to user_path(@proposal.user) do %>
+                        <%= image_tag @proposal.user.image,class:"img-circle profile-0" %>
+                    &nbsp;
+                     <%= @proposal.user.name %>
+                     <% end %>
+                    </div>
+                    &nbsp;
+                    <br>
+                    <div class="icon">提案内容
+                    &nbsp;
+                    </div>
+                    <div class="text-center icon-content">
+                    <%= @proposal.proposal_content %>
+                    </div>
+                    <hr>
+                    <div class="icon">
+                    &nbsp;<i class="fa fa-jpy" aria-hidden="true"></i>料金
+                    </div>
+                    <div class="text-center icon-content">
+                    <%= @proposal.proposal_price %>
+                    </div>
+                    <br>
+                    </div>         
+    </div>
+
+    <div class="col-md-2">
+      <div class="box">
+        <!-- 編集ボタン -->
+        <% if current_user == @proposal.user %>
+        <%= link_to "編集", edit_proposal_path(@proposal), class: "btn btn-primary" %>
+        <% end %>
+
+
+         <!-- 承認ボタン -->
+        <% if current_user == @proposal.listing.user %>
+        <%= form_for [@proposal, @proposal.approvals.new] do |f| %>       
+        <%= f.hidden_field :proposal_id, value: @proposal.id %>
+        <%= f.hidden_field :proposal_content, value: @proposal.proposal_content %>
+        <%= f.hidden_field :proposal_price, value: @proposal.proposal_price %>
+
+        <%= f.submit "承認する", class: "btn btn-danger btn-wide" %>                                
+        <% end %>
+        <% end %>        
+      </div>
+    </div>
+  </div>
+</div>      
+
+
+  
+
+
+                   

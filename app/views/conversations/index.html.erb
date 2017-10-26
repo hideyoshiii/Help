@@ -1,0 +1,43 @@
+<%= render 'partial/navbar' %>
+        
+<div class="container-fluid">
+  <div class="row o-3column">
+    <div class="col-md-3">
+      
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
+      <div class="panel panel-default">
+                <div class="panel-heading">
+                    メッセージ
+                </div>            
+                <% @conversations.each do |conversation| %>
+                    <% other = conversation.sender == current_user ? conversation.recipient : conversation.sender %>
+                    <% if !conversation.messages.blank? %>
+                        <div class="panel-body panel-conversation">
+                            <div class="row">
+                                <div class="col-md-2 text-center row-space-1">
+                                    <%= image_tag other.image, class: "img-circle profile-1" %><br>
+                                    <%= other.name %> 
+                                </div>
+                                <%= link_to conversation_messages_path(conversation) do %>
+                                    <div class="col-md-8 messages-body">
+                                        <%= conversation.messages.last.body %>
+                                    </div>
+                                <% end %>
+                                    <div class="col-md-2">
+                                    <%= conversation.messages.last.message_time %>
+                                </div> 
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>   
+            </div>    
+    </div>
+
+    <div class="col-md-2">
+      
+    </div>
+  </div>
+</div>
+

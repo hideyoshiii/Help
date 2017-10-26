@@ -1,0 +1,115 @@
+<%= render 'partial/navbar' %>
+
+<div class="container-fluid">
+      <div class="row o-3column">
+        <div class="col-md-3">
+        
+    </div>
+        <div class="col-md-6 col-md-offset-1">
+        <div class="panel panel-default">
+				<div class="panel-heading">
+					Help作成
+				</div>
+			
+				<div class="panel-body">			
+					<!-- ここからフォーム -->
+					<%= form_for @listing do |f| %>
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+                                <label>タイトル</label>
+                                <%= f.text_field :title, placeholder: "リスティングタイトルを記載しましょう", class: "form-control", required: "true" %>
+                            	</div>
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+									<label>カテゴリー</label>
+									<%= f.select :category, [["ビジネス","ビジネス"], ["企画","企画"], ["グルメ","グルメ"], ["写真","写真"], ["占い","占い"], ["恋愛","恋愛"], ["美容","美容"], ["家族","家族"], ["子育て","子育て"], ["就職","就職"], ["起業","起業"], ["プログラミング","プログラミング"], ["パフォーマンス","パフォーマンス"], ["語学","語学"], ["フリートーク","フリートーク"], ["お手伝い","お手伝い"], ["心の悩み","心の悩み"], ["健康","健康"], ["お金","お金"], ["生き方","生き方"]], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+								</div>
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+                                <label>内容</label>
+                                <%= f.text_area :content, rows: 8, placeholder: "リスティングの内容について記述してください", class: "form-control", required: "true" %>
+                            </div> 
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+									<label>エリア</label>
+									<%= f.select :area, [["インターネット","インターネット"], ["北海道","北海道"], ["青森","青森"], ["岩手","岩手"], ["宮城","宮城"], ["秋田","秋田"], ["山形","山形"], ["福島","福島"], ["茨城","茨城"], ["栃木","栃木"], ["群馬","群馬"], ["埼玉","埼玉"], ["千葉","千葉"], ["東京","東京"], ["神奈川","神奈川"], ["新潟","新潟"], ["富山","富山"], ["石川","石川"], ["福井","福井"], ["山梨","山梨"], ["長野","長野"], ["岐阜","岐阜"], ["静岡","静岡"], ["愛知","愛知"], ["三重","三重"], ["滋賀","滋賀"], ["京都","京都"], ["大阪","大阪"], ["兵庫","兵庫"], ["奈良","奈良"], ["和歌山","和歌山"], ["鳥取","鳥取"], ["島根","島根"], ["岡山","岡山"], ["広島","広島"], ["山口","山口"], ["徳島","徳島"], ["香川","香川"], ["愛媛","愛媛"], ["高知","高知"], ["福岡","福岡"], ["佐賀","佐賀"], ["長崎","長崎"], ["熊本","熊本"], ["大分","大分"], ["宮崎","宮崎"],["鹿児島","鹿児島"],["沖縄","沖縄"],["海外","海外"], ], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+								</div>
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+									<label>形式</label>
+									<%= f.select :format, [["対面","対面"], ["オンライン","オンライン"], ["電話","電話"], ["メッセージ","メッセージ"]], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+								</div>
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+                                <label>予算</label>
+                                <%= f.text_field :budget, placeholder: "(例)1000~3000", class: "form-control", required: "true" %>
+                            	</div>
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+                                <label>募集期限</label>
+                                <%= f.text_field :deadline, placeholder: "(例)10/30", class: "form-control", required: "true" %>
+                            	</div>
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+			              <div class="col-md-12 select">
+			                <div class="form-group">
+			                  <label>公開する</label>
+			                  <%= f.select :active, [["公開する","true"], ["非公開にする","false"]], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+			                </div>
+			              </div>
+			            </div>
+            			<br>
+
+						<div class="actions">
+							<%= f.submit "保存", class: "btn btn-danger" %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		
+
+    </div>
+        <div class="col-md-2">
+        <div class="box">
+                  <h2>上手く書く方法とか</h2>
+                  
+         </div>
+    </div>
+      </div>
+    </div>
+
+

@@ -1,0 +1,251 @@
+<!-- Search Form -->
+<div class="panel panel-default">
+<div class="panel-heading">
+  検索フォーム
+</div>
+<%= search_form_for @search, url: root_path do |f| %>
+      <div class="panel-body">
+      <div class="form-group">
+      <h4 class="search-box"><i class="fa fa-handshake-o" aria-hidden="true"></i>形式</h4>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[format_eq_any][]", "対面",session[:Meeting] %> 対面
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[format_eq_any][]", "オンライン",session[:Online] %> オンライン
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[format_eq_any][]", "電話",session[:Telephone]%> 電話
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[format_eq_any][]", "メッセージ",session[:Message]%> メッセージ
+        </label>
+      </div>
+      </div>
+      </div>
+
+
+      <div class="panel-body">
+      <div class="form-group">
+      <h4 class="search-box"><i class="fa fa-bookmark-o" aria-hidden="true"></i>カテゴリー</h4>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "ビジネス",session[:Business] %> ビジネス
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "企画",session[:Plan] %> 企画
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "グルメ",session[:Gourmet]%> グルメ
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "写真",session[:Picture]%> 写真
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "占い",session[:Fortune] %> 占い
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "恋愛",session[:Love] %> 恋愛
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "プログラミング",session[:Programming]%> プログラミング
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "パフォーマンス",session[:Performance]%> パフォーマンス
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "語学",session[:Language] %> 語学
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "フリートーク",session[:Talk] %> フリートーク
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "お手伝い",session[:Maid]%> お手伝い
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "心の悩み",session[:Heart]%> 心の悩み
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "健康",session[:Healthy] %> 健康
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "お金",session[:Money] %> お金
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[category_eq_any][]", "生き方",session[:Life]%> 生き方
+      </div>
+      </div>
+      </div>
+
+      <div class="panel-body">
+      <div class="form-group">
+      <h4 class="search-box"><i class="fa fa-map-marker" aria-hidden="true"></i>エリア</h4>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "インターネット",session[:Internet]%> インターネット
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "北海道",session[:Hokkaido]%> 北海道
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "青森",session[:Aomori]%> 青森
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "岩手",session[:Iwate]%> 岩手
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "宮城",session[:Miyagi]%> 宮城
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "秋田",session[:Akita]%> 秋田
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "山形",session[:Yamagata]%> 山形
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "福島",session[:Fukushima]%> 福島
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "茨城",session[:Ibaraki]%> 茨城
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "栃木",session[:Tochigi]%> 栃木
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "群馬",session[:Gunma]%> 群馬
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "埼玉",session[:Saitama]%> 埼玉
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "千葉",session[:Chiba]%> 千葉
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "東京",session[:Tokyo]%> 東京
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "神奈川",session[:Knagawa]%> 神奈川
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "新潟",session[:Niigata]%> 新潟
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "富山",session[:Toyama]%> 富山
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "石川",session[:Ishikawa]%> 石川
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "福井",session[:Fukui]%> 福井
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "山梨",session[:Yamanashi]%> 山梨
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "長野",session[:Nagano]%> 長野
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "岐阜",session[:Gifu]%> 岐阜
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "静岡",session[:Shizuoka]%> 静岡
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "愛知",session[:Aichi]%> 愛知
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "三重",session[:Mie]%> 三重
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "滋賀",session[:Shiga]%> 滋賀
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "京都",session[:Kyoto]%> 京都
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "大阪",session[:Osaka]%> 大阪
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "兵庫",session[:Hyogo]%> 兵庫
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "奈良",session[:Nara]%> 奈良
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "和歌山",session[:Wakayama]%> 和歌山
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "鳥取",session[:Tottori]%> 鳥取
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "島根",session[:Shimane]%> 島根
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "岡山",session[:Okayama]%> 岡山
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "広島",session[:Hiroshima]%> 広島
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "山口",session[:Yamaguchi]%> 山口
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "徳島",session[:Tokushima]%> 徳島
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "香川",session[:Kagawa]%> 香川
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "愛媛",session[:Ehime]%> 愛媛
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "高知",session[:Kouchi]%> 高知
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "福岡",session[:Fukuoka]%> 福岡
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "佐賀",session[:Saga]%> 佐賀
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "長崎",session[:Nagasaki]%> 長崎
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "熊本",session[:Kumamoto]%> 熊本
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "大分",session[:Oita]%> 大分
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "宮崎",session[:Miyazaki]%> 宮崎
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "鹿児島",session[:Kagoshima]%> 鹿児島
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "沖縄",session[:Okinawa]%> 沖縄
+      </div>
+      <div class="col-md-12">
+        <%= check_box_tag "q[area_eq_any][]", "海外",session[:Overseas]%> 海外
+      </div>
+      </div>
+      </div>
+
+
+      
+    <!-- Submitボタン -->
+    <div class="row filter-section">
+      <div class="col-md-3 pull-right">
+        <%= f.submit "検索", class: "btn btn-danger" %>
+      </div>
+    </div>  
+    <br>  
+<% end %>
+</div>
+
+
+

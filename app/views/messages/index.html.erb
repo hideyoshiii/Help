@@ -1,0 +1,51 @@
+<%= render 'partial/navbar' %>
+<!-- this page has instance @other, @messages from message contr ,@conversation from convesation contrl-->
+
+        
+ <div class="container-fluid">
+  <div class="row o-3column">
+    <div class="col-md-3">
+      <div class="box">
+        <div class="text-center">
+        <%= image_tag @other.image, class: "img-circle profile-2" %>
+        <br>
+        <span style="font-size: 20px"><%= @other.name %>とのメッセージ</span>
+        </div>        
+      </div> 
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
+       <div class="panel panel-default">
+                
+                
+                <div class="panel-body">
+                    <%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
+                        <div class="form-group">
+                            <%= f.text_area :body, placeholder: "ここにメッセージを入力してください", class: "form-control", required: "true" %>
+                        </div>
+                        <%= f.hidden_field :user_id, value: current_user.id %>
+
+                        <div class="actions">
+                            <%= f.submit "Send", class: "btn btn-danger pull-right" %>
+                        </div>
+                    <% end %>
+                    <div class="btn btn-warning pull-left">
+                         <%= link_to("更新", conversation_messages_path(@conversation)) %>
+                     </div>
+                </div>
+            </div>
+            
+            <div id="chat"> 
+            <!-- 部分テンプレートにローカル変数を渡す -->
+                <%= render @messages %>
+            </div>
+    </div>
+
+    <div class="col-md-2">
+      
+    </div>
+  </div>
+</div>
+
+
+    

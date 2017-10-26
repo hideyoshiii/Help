@@ -1,0 +1,50 @@
+<%= render 'partial/navbar' %>
+
+
+                 
+      
+      <div class="container-fluid">
+      <div class="row o-3column">
+        <div class="col-md-3">
+         <div class="panel panel-default">
+<div class="panel-heading">
+  承認
+</div>
+<div class="panel-body">
+<%= link_to "承認した",  approvals_path %>
+    </div>
+    </div> 
+    </div>
+<div class="col-md-6 col-md-offset-1">
+<div class="panel panel-default background">
+<div class="panel-heading">
+承認された
+</div>
+<% @proposals.each do |proposal| %>
+<% proposal.approvals.each do |approval| %>
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="pull-left link-title">
+<%= link_to user_path(approval.user) do %>
+<%= image_tag approval.user.image, class: "img-circle profile-1" %>
+<%= approval.user.name %>
+<% end %>
+</div>
+<div class="clearfix">
+</div>
+<hr>
+<%= approval.proposal_content %>
+</div>
+</div>
+<% end %>
+<% end %>
+</div>
+</div>
+        <div class="col-md-2">
+        
+    </div>
+      </div>
+    </div>
+
+
+   

@@ -1,0 +1,45 @@
+
+<div class="panel panel-default background">
+<div class="panel-heading">
+Help一覧
+</div>
+<% if @arrlistings  %>
+<% @arrlistings.each do |listing| %>
+<div class="panel panel-default">
+<div class="panel-body">
+<%= link_to listing do %>
+<p>
+<div class="pull-left link-title">
+<%= image_tag listing.user.image,class:"img-circle profile-1" %>
+&nbsp;&nbsp;
+<%= listing.title %>
+</div>
+</p>
+<% end %> 
+<div class="clearfix">
+</div>
+<hr>
+<div class="pull-right">
+<i class="fa fa-jpy" aria-hidden="true"></i>
+<%= listing.budget %>
+&nbsp;
+<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+<%= listing.deadline %>
+&nbsp;
+<i class="fa fa-map-marker" aria-hidden="true"></i>
+<%= listing.area %>
+&nbsp;
+<i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+<% proposals_count = Proposal.where(listing_id: listing.id).count %>
+<%= proposals_count %>
+&nbsp;
+<i class="fa fa-heart-o" aria-hidden="true"></i>
+<% likes_count = Like.where(listing_id: listing.id).count %>
+<%= likes_count %>
+</div>
+</div>
+</div>
+<% end %>
+<% end %>
+</div>
+

@@ -1,0 +1,56 @@
+<%= render 'partial/navbar' %>
+
+     
+
+<div class="container-fluid">
+  <div class="row o-3column">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+<div class="panel-heading">
+  提案
+</div>
+<div class="panel-body">
+<%= link_to "提案された",  proposaled_path %>
+    </div>
+    </div> 
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
+      <div class="panel panel-default background">
+<div class="panel-heading">
+提案した
+</div>
+<% @proposals.each do |proposal| %>
+<div class="panel panel-default">
+<div class="panel-body">
+
+<p>
+<div class="pull-left link-title">
+<%= link_to user_path(proposal.listing.user) do %>
+<%= image_tag proposal.listing.user.image, class: "img-circle profile-1" %>
+<%= proposal.listing.user.name %>
+<% end %> 
+</div>
+<div class="text-center">
+<%= proposal.listing.title %>
+</div>
+</p>
+<div class="clearfix">
+</div>
+<hr>
+<%= link_to(proposal.proposal_content, "/proposals/#{proposal.id}") %>
+</div>
+</div>
+<% end %>
+</div>
+
+
+
+    </div>
+
+    <div class="col-md-2">
+      
+    </div>
+  </div>
+</div>
+

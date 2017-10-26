@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  category: MyString
+  area: MyString
+  format: MyString
+  budget: MyString
+  deadline: MyString
+  active: false
+  user: one
+
+two:
+  title: MyString
+  content: MyText
+  category: MyString
+  area: MyString
+  format: MyString
+  budget: MyString
+  deadline: MyString
+  active: false
+  user: two

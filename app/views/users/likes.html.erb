@@ -1,0 +1,64 @@
+<%= render 'partial/navbar' %>
+
+
+<div class="container-fluid">
+  <div class="row o-3column">
+    <div class="col-md-3">
+      <div class="box">
+        <h2>サイドバー１</h2>         
+      </div> 
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
+      <div class="panel panel-default background">
+<div class="panel-heading">
+Help一覧
+</div>
+<% @likes.each do |like| %>
+<div class="panel panel-default">
+<div class="panel-body">
+<% listing = Listing.find_by(id: like.listing_id) %>
+<p>
+<div class="pull-left link-title">
+<%= image_tag listing.user.image,class:"img-circle profile-1" %>
+&nbsp;&nbsp;
+<%= link_to(listing.title, "/listings/#{listing.id}") %>
+</div>
+</p>
+<div class="clearfix">
+</div>
+<hr>
+<div class="pull-right">
+<i class="fa fa-jpy" aria-hidden="true"></i>
+<%= listing.budget %>
+&nbsp;
+<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+<%= listing.deadline %>
+&nbsp;
+<i class="fa fa-map-marker" aria-hidden="true"></i>
+<%= listing.area %>
+&nbsp;
+<i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+<% proposals_count = Proposal.where(listing_id: listing.id).count %>
+<%= proposals_count %>
+&nbsp;
+<i class="fa fa-heart-o" aria-hidden="true"></i>
+<% likes_count = Like.where(listing_id: listing.id).count %>
+<%= likes_count %>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+
+
+    </div>
+
+    <div class="col-md-2">
+      <div class="box">
+        <h2>サイドバー２</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
