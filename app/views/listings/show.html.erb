@@ -17,6 +17,11 @@
                     <% end %>
                     &nbsp;
                      <%= @listing.user.name %>
+                     <% if @listing.solution == true %>
+                    <div class="pull-right">
+                        解決済み
+                    </div>
+                    <% end %>
         </div>
                   
                     

@@ -41,6 +41,8 @@ gem "paperclip", "~> 5.0.0"
 gem 'ransack'
 gem "font-awesome-rails"
 gem "figaro", "~> 1.1.0"
+gem 'stripe'
+
 
 group :production do
   gem 'pg'

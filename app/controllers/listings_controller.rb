@@ -30,6 +30,9 @@ class ListingsController < ApplicationController
 
   def edit
     @listing = Listing.find(params[:id])
+    if !(current_user == @listing.user)
+      redirect_to root_path, notice: "他人の編集ページにはアクセスできません"
+    end
   end
 
   def update

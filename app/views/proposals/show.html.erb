@@ -47,12 +47,15 @@
 
          <!-- 承認ボタン -->
         <% if current_user == @proposal.listing.user %>
-        <%= form_for [@proposal, @proposal.approvals.new] do |f| %>       
+        <%= form_for [@proposal, @proposal.approvals.new] do |f| %>
+
+        <%= hidden_field_tag :token %>
+
         <%= f.hidden_field :proposal_id, value: @proposal.id %>
         <%= f.hidden_field :proposal_content, value: @proposal.proposal_content %>
         <%= f.hidden_field :proposal_price, value: @proposal.proposal_price %>
 
-        <%= f.submit "承認する", class: "btn btn-danger btn-wide" %>                                
+        <button class='btn btn-danger pay-button'>承認する</button>                               
         <% end %>
         <% end %>        
       </div>
@@ -60,6 +63,20 @@
   </div>
 </div>      
 
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<!-- セッションみたいなもの。 -->
+<script>
+  // You can select to pay either directly or via the platform, so
+  // we need both publishable keys here.
+  window.publishable = {
+    platform: "<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
+  };
+  window.currentUserEmail = "<%= current_user.email %>";
+
+  window.proposal_price = "<%= @proposal.proposal_price %>";
+</script>
 
   
 

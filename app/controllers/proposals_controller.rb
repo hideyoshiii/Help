@@ -6,6 +6,9 @@ class ProposalsController < ApplicationController
 
 	def edit
 		@proposal = Proposal.find(params[:id])
+		if !(current_user == @proposal.user)
+      redirect_to root_path, notice: "他人の編集ページにはアクセスできません"
+    end
 	end
 
 	def show
