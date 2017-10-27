@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  rate: 1
+  approval: one
+  user: one
+  reviewed_user_id: 1
+
+two:
+  description: MyText
+  rate: 1
+  approval: two
+  user: two
+  reviewed_user_id: 1

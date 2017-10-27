@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026092156) do
+ActiveRecord::Schema.define(version: 20171027082426) do
 
   create_table "approvals", force: :cascade do |t|
     t.integer "user_id"
@@ -75,6 +75,18 @@ ActiveRecord::Schema.define(version: 20171026092156) do
     t.datetime "updated_at", null: false
     t.index ["listing_id"], name: "index_proposals_on_listing_id"
     t.index ["user_id"], name: "index_proposals_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "rate"
+    t.integer "approval_id"
+    t.integer "user_id"
+    t.integer "reviewed_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["approval_id"], name: "index_reviews_on_approval_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

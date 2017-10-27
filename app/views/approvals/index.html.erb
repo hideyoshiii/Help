@@ -33,6 +33,18 @@
 </div>
 <hr>
 <%= approval.proposal_content %>
+<hr>
+<% @approval = approval %>
+<% unless Review.find_by(approval_id: @approval.id) %>
+<%= form_for [@approval,@approval.reviews.new], url: new_approval_review_path(@approval), html: {method: "get"} do |f| %>
+  <%= f.hidden_field :approval_id, value: @approval.id %>
+  <%= f.hidden_field :reviwed_user_id, value: @approval.proposal.user.id %>
+  <div class="actions">
+    <%= f.submit "レビューする", class: "btn btn-danger"%>       
+  </div>
+  <% end %>
+
+<% end %> 
 </div>
 </div>
 <% end %>
@@ -44,6 +56,8 @@
       </div>
     </div> 
       
+
+
 
 
 

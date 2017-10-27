@@ -17,9 +17,15 @@ Rails.application.routes.draw do
     resources :approvals, only: [:create]
   end
 
+  resources :approvals do
+    resources :reviews, only: [:create, :new]
+  end
+
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
+
+
 
   get '/index' => 'pages#index'
 

@@ -1,0 +1,55 @@
+<%= render 'partial/navbar' %>
+
+<div class="container-fluid">
+  <div class="row o-3column">
+    <div class="col-md-3">
+      <div class="box">
+        <h2>サイドバー１</h2>         
+      </div> 
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
+      <div class="box">
+      	
+        <%= form_for([@approval,@approval.reviews.new]) do |f| %>
+
+  <div id="rate_stars"></div>
+
+  <div class="form-group">
+    <%= f.text_area :description,rows: 3,class: "form-control" %>     
+  </div>
+
+
+  <%= f.hidden_field :approval_id, value: @approval.id %>
+  <%= f.hidden_field :reviewed_user_id, value: @approval.proposal.user.id %>
+
+  <%= f.hidden_field :balance, value: @approval.proposal.proposal_price %>
+  
+  <div class="actions">
+    <%= f.submit "レビューする", class: "btn btn-danger"%>       
+  </div>
+
+<% end %> 
+
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="box">
+        <h2>サイドバー２</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  $("#rate_stars").raty({
+      path: '/assets',
+      scoreName: 'review[rate]',
+      score: 1
+  });
+</script>
+
+
