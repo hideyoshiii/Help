@@ -6,6 +6,10 @@ class PagesController < ApplicationController
     @notifications = Notification.where(user_id: current_user.id)
   end
 
+  def balance
+    @balance = current_user.balance
+  end
+
   def search
 
   	@listings = Listing.where(active: true).all.reverse_order
