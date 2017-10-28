@@ -26,6 +26,9 @@ class ProposalsController < ApplicationController
   def create
   	@proposal = current_user.proposals.create(proposal_params)
 
+  	@notification = Notification.new(user_id: @proposal.listing.user_id, content: "あなたに提案がされました", read: false)
+  	@notification.save
+
   	redirect_to @proposal.listing, notice:"提案しました"
   end
 

@@ -41,6 +41,9 @@ class ApprovalsController < ApplicationController
     @solution.solution = true
     @solution.save
 
+    @notification = Notification.new(user_id: @approval.proposal.user_id, content: "あなたの提案が承認されました", read: false)
+    @notification.save
+
   end
 
   def index
