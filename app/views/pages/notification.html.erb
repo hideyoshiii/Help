@@ -12,6 +12,7 @@
       <div class="box">
         <% @notifications.each do |notification| %>   
         <%= notification.content %>   
+        <%=notification.created_at.strftime('%Y/%m/%d') %>
         <hr>     
         <% end %>            
       </div>

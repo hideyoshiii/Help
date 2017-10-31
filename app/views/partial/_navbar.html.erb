@@ -24,7 +24,9 @@
             <% end %>
           </li>
           <li><%= link_to "Helpを出す", new_listing_path %></li>
-          <li><%= link_to "#{current_user.balance}円", balance_path %></li>
+          
+          <li><%= link_to "出金申請", balance_path %></li>
+          
           <li><%= link_to "お知らせ", notification_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

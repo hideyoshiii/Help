@@ -3,11 +3,24 @@ class PagesController < ApplicationController
   end
 
   def notification
-    @notifications = Notification.where(user_id: current_user.id)
+    @notifications = Notification.where(user_id: current_user.id).all.reverse_order
+    Notification.where(user_id: current_user.id).update_all(:read => true)
   end
 
-  def balance
-    @balance = current_user.balance
+
+  def about
+  end
+
+  def flow
+  end
+
+  def terms
+  end
+
+  def privacy
+  end
+
+  def law
   end
 
   def search

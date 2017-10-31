@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 
     @user = User.find_by(id: @review.reviewed_user_id)
     @naw = @user.balance
-    @user.balance = @balance.to_i + @naw
+    @user.balance = @balance.to_i * 8 / 10 + @naw
     @user.save
 
     @notification = Notification.new(user_id: @review.reviewed_user_id, content: "あなたに謝礼金が支払われました", read: false)

@@ -24,7 +24,7 @@
 
 
       <div class="panel panel-default background">
-<div class="panel-heading">
+　　　　<div class="panel-heading">
         Help一覧
         </div> 
        <% @user.listings.each do |listing| %>
@@ -38,6 +38,11 @@
           <div class="clearfix">
           </div>
           <hr>
+          <% if listing.solution == true %>
+          <div class="pull-left">
+            解決済み
+          </div>
+          <% end %>
           <div class="pull-right">
           <i class="fa fa-jpy" aria-hidden="true"></i>
           <%= listing.budget %>

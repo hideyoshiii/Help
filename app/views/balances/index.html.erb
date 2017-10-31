@@ -1,0 +1,69 @@
+<%= render "partial/navbar" %>
+
+<div class="container-fluid">
+  <div class="row o-3column">
+    <div class="col-md-3">
+      <div class="box">
+        <h2>サイドバー１</h2>         
+      </div> 
+    </div>
+
+    <div class="col-md-6 col-md-offset-1">
+      <div class="box">
+        現在、あなたの売上残高は 
+        <% if @balance == nil %>
+          0
+        <% else %>
+          <%= @balance %>
+        <% end %>  
+        円です。 
+        <br>
+        <% if current_user.connected? %>
+        <%= link_to "出金先の口座を登録する",  payouts_account_new_path %>
+        <br>
+        <% else %>
+        <%= link_to "出金申請", payouts_new_path %>
+        <br>
+        <%= link_to "登録口座を変更する",  payouts_account_edit_path %>
+        <br>
+        <% end %>
+        
+　　　　<div class="panel-heading">
+        出金履歴
+        </div> 
+       <% @payouts.each do |payout| %>
+       <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+          <%= payout.created_at %>
+          <br>
+          <%= payout.amount %>円
+          <br>
+          <% if payout.transfer == true %>
+          振込完了
+          <% else %>
+          振込申請中
+          <% end %>
+          </p>
+          <div class="clearfix">
+          </div>     
+        </div>
+        </div>
+        <% end %>
+     </div>
+                     
+      </div>
+    
+
+    <div class="col-md-2">
+      <div class="box">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+     
+
+

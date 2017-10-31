@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :proposals
   has_many :approvals
   has_many :reviews
+  has_many :payouts
 
 
 	def self.from_omniauth(auth)
@@ -22,6 +23,10 @@ class User < ActiveRecord::Base
 	    # uncomment the line below to skip the confirmation emails.
 	    # user.skip_confirmation!
 	  end
+	end
+
+	def connected?
+		bank_name.nil?
 	end
 
 end

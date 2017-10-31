@@ -41,7 +41,19 @@ Rails.application.routes.draw do
   get "users/:id/likes" => "users#likes"
 
   get "/notification" => "pages#notification"
-  get "/balance" => "pages#balance"
+  get "/about" => "pages#about"
+  get "/flow" => "pages#flow"
+  get "/terms" => "pages#terms"
+  get "/privacy" => "pages#privacy"
+  get "/law" => "pages#law"
+
+  get "/balance" => "balances#index"
+  get "/payouts/new" => "balances#new"
+  post "/payouts/create" => "balances#create"
+  get "/payouts/account/new" => "balances#account"
+  post "payouts/account/connect" => "balances#connect"
+  get "payouts/account/edit" => "balances#edit"
+  post "payouts/account/update" => "balances#update"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
