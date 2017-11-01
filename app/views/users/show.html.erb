@@ -4,7 +4,7 @@
 		
  <div class="container-fluid">
       <div class="row o-3column">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-3 hidden-xs">
           <div class="panel panel-default">
             <div class="panel-body">
             レビュー<%= @reviews.count %>件
@@ -14,8 +14,9 @@
             
         </div>
     </div>
-        <div class="col-md-6 col-md-offset-1">
-        <div class="box">
+        <div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xm-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
 
 
       <div class="text-center">                      
@@ -67,6 +68,7 @@
         </div>
         <% end %>
      </div>
+     </div>
 
     
 
@@ -76,7 +78,7 @@
     </div>
 
     
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-2 col-xm-12">
           <% if current_user != @user %>
         <div class="panel panel-default">
         <div class="row-space-2">
