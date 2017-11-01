@@ -102,6 +102,7 @@
 .sub-bar{
     font-size:13px;
     color:black;
+    padding:18px 0 0 18px;
 }
 
 .sub-bar-1{
@@ -387,6 +388,58 @@ ul.social-buttons li a {
   margin-top: 5px;
 }
 
+// 通知の色
+.bell-on {
+  color: #DC143C;
+}
+
+//うまいHelpの書き方
+.how-to-help{
+  padding-top:8px;
+}
+
+.how-to-help li{
+  list-style:none;
+}
+
+//売上残高の数字の色
+.money-balances{
+  color:red;
+}
+
+//出金履歴
+.payout-amount {
+  color:#c51b1d;
+}
+
+
+.payout-in {
+  color:#d78e46;
+}
+
+.payout-out {
+  color:#8dd8d4;
+}
+
+//売上残高
+.balance-title{
+  color:black;
+  font-size:18px;
+}
+
+//日付
+.review-date{
+  font-size:10px;
+}
+
+//文字色
+.black{
+  color:black;
+}
+
+.blue{
+  color:#8dd8d4;
+}
 
 body {
     padding-top: 70px;

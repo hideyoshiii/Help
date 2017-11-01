@@ -6,7 +6,7 @@
 <%= search_form_for @search, url: root_path do |f| %>
       <div class="panel-body">
       <div class="form-group">
-      <h4 class="search-box"><i class="fa fa-handshake-o" aria-hidden="true"></i>形式</h4>
+      <h4 class="search-box black"><i class="fa fa-handshake-o" aria-hidden="true"></i>形式</h4>
       <div class="col-md-12">
         <label>
         <%= check_box_tag "q[format_eq_any][]", "対面",session[:Meeting] %> 対面
@@ -33,7 +33,7 @@
 
       <div class="panel-body">
       <div class="form-group">
-      <h4 class="search-box"><i class="fa fa-bookmark-o" aria-hidden="true"></i>カテゴリー</h4>
+      <h4 class="search-box black"><i class="fa fa-bookmark-o" aria-hidden="true"></i>カテゴリー</h4>
       <div class="col-md-12">
         <%= check_box_tag "q[category_eq_any][]", "ビジネス",session[:Business] %> ビジネス
       </div>
@@ -84,7 +84,7 @@
 
       <div class="panel-body">
       <div class="form-group">
-      <h4 class="search-box"><i class="fa fa-map-marker" aria-hidden="true"></i>エリア</h4>
+      <h4 class="search-box black"><i class="fa fa-map-marker" aria-hidden="true"></i>エリア</h4>
       <div class="col-md-12">
         <%= check_box_tag "q[area_eq_any][]", "インターネット",session[:Internet]%> インターネット
       </div>

@@ -3,30 +3,52 @@
 <div class="container-fluid">
   <div class="row o-3column">
     <div class="col-md-3">
-      <div class="box">
-        <h2>サイドバー１</h2>         
-      </div> 
+      
     </div>
 
     <div class="col-md-6 col-md-offset-1">
-      <div class="box">
+      <div class="panel panel-default">
+        <div class="panel-body">
+        <br>
+        <div class="text-center balance-title">
         現在、あなたの売上残高は 
+        <span class="money-balances">
         <% if @balance == nil %>
           0
         <% else %>
           <%= @balance %>
-        <% end %>  
-        円です。 
-        <br>
+        <% end %> 
+        円
+        </span> 
+        です。
+        </div> 
+        <br><br><br><br>
+         
+
         <% if current_user.connected? %>
+        <div class="btn btn-success">
         <%= link_to "出金先の口座を登録する",  payouts_account_new_path %>
-        <br>
+        </div>
+        <br><br><br><br>
         <% else %>
-        <%= link_to "出金申請", payouts_new_path %>
-        <br>
-        <%= link_to "登録口座を変更する",  payouts_account_edit_path %>
-        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+
+
+        <div class="btn btn-info">
+        <%= link_to "出金申請", payouts_new_path, :style=>"color:white;" %>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="btn btn-success text-center">
+        <%= link_to "登録口座を変更する",  payouts_account_edit_path, :style=>"color:white;" %>
+        </div>
+        <br><br><br><br>
         <% end %>
+        
+
         
 　　　　<div class="panel-heading">
         出金履歴
@@ -34,17 +56,23 @@
        <% @payouts.each do |payout| %>
        <div class="panel panel-default">
         <div class="panel-body">
-          <p>
-          <%= payout.created_at %>
+          
+          <%= payout.created_at.strftime('%Y/%m/%d') %>
           <br>
+          <div class="pull-right payout-amount">
           <%= payout.amount %>円
-          <br>
+          </div>
           <% if payout.transfer == true %>
+          <div class="payout-out">
           振込完了
+          </div>
           <% else %>
+          <div class="payout-in">
           振込申請中
+          </div>
           <% end %>
-          </p>
+          
+          
           <div class="clearfix">
           </div>     
         </div>
@@ -53,12 +81,11 @@
      </div>
                      
       </div>
+      </div>
     
 
     <div class="col-md-2">
-      <div class="box">
-        
-      </div>
+      
     </div>
   </div>
 </div>

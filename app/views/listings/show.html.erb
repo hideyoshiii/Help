@@ -4,10 +4,7 @@
                     <div class="container-fluid">
       <div class="row o-3column">
         <div class="col-md-3">
-        <div class="box">
-                  <h2>サイドバー１</h2>
-                  
-         </div>
+        
     </div>
         <div class="col-md-6 col-md-offset-1">
         <div class="panel panel-default">
@@ -86,21 +83,24 @@
         <div class="box">
           <% if Like.find_by(user_id: @current_user.id, listing_id: @listing.id) %>
         <%= link_to("/likes/#{@listing.id}/destroy", {method: "post"}) do %>
-          <span class="fa fa-heart like-btn-unlike"></span>
+          <span class="fa fa-heart like-btn-unlike fa-4x"></span>
         <% end %>
+        いいねを取り消す
       <% else %>
         <%= link_to("/likes/#{@listing.id}/create", {method: "post"}) do %>
-          <span class="fa fa-heart like-btn"></span>
+          <span class="fa fa-heart like-btn fa-4x"></span>
         <% end %>
+        いいねする
       <% end %>
-      <%= @likes_count %>
+      
 
-      <br>
+      <br><br>
 
       <% if current_user != @listing.user %>
       <%= link_to("/listings/#{@listing.id}/proposals/new") do %>
-          <span class="fa fa-hand-paper-o hand-btn"></span>
+          <span class="fa fa-hand-paper-o hand-btn fa-4x"></span>
         <% end %>
+        提案する
     <% end %>
     
                   

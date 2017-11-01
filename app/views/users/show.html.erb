@@ -5,12 +5,14 @@
  <div class="container-fluid">
       <div class="row o-3column">
         <div class="col-md-3">
-          <div class="box">
+          <div class="panel panel-default">
+            <div class="panel-body">
             レビュー<%= @reviews.count %>件
             
             <%= render 'reviews/list' %>
             </div>
-        
+            
+        </div>
     </div>
         <div class="col-md-6 col-md-offset-1">
         <div class="box">
@@ -76,7 +78,7 @@
     
         <div class="col-md-2">
           <% if current_user != @user %>
-        <div class="box">
+        <div class="panel panel-default">
         <div class="row-space-2">
           <%= link_to "メッセージを送る", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post',class: "btn btn-danger btn-full" %>
         </div>        

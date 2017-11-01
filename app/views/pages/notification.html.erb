@@ -3,25 +3,25 @@
 <div class="container-fluid">
   <div class="row o-3column">
     <div class="col-md-3">
-      <div class="box">
-        <h2>サイドバー１</h2>         
-      </div> 
+      
     </div>
 
     <div class="col-md-6 col-md-offset-1">
-      <div class="box">
+      <div class="panel panel-default">
+        <div class="panel-body">
         <% @notifications.each do |notification| %>   
         <%= notification.content %>   
+        <div class="pull-right">
         <%=notification.created_at.strftime('%Y/%m/%d') %>
+        </div>
         <hr>     
         <% end %>            
       </div>
     </div>
+    </div>
 
     <div class="col-md-2">
-      <div class="box">
-        <h2>サイドバー２</h2>
-      </div>
+      
     </div>
   </div>
 </div>

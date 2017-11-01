@@ -21,11 +21,11 @@
                                     <%= other.name %> 
                                 </div>
                                 <%= link_to conversation_messages_path(conversation) do %>
-                                    <div class="col-md-8 messages-body">
+                                    <div class="col-md-7 messages-body">
                                         <%= conversation.messages.last.body %>
                                     </div>
                                 <% end %>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                     <%= conversation.messages.last.message_time %>
                                 </div> 
                             </div>

@@ -21,28 +21,37 @@
 <% @approvals.each do |approval| %>
 <div class="panel panel-default">
 <div class="panel-body">
-<p>
-<div class="pull-left link-title">
+
+<div class="pull-left ">
 <%= link_to user_path(approval.proposal.user) do %>
-<%= image_tag approval.proposal.user.image, class: "img-circle profile-0" %>
+<%= image_tag approval.proposal.user.image, class: "img-circle profile-1" %>
 <%= approval.proposal.user.name %>
 </div>
-</p>
 <% end %> 
+<div class="text-center">
+<i class="fa fa-hand-paper-o" aria-hidden="true"></i>提案内容
+</div>
+<div class="text-center black">
+<%= approval.proposal_content %>
+</div>
 <div class="clearfix">
 </div>
-<hr>
-<%= approval.proposal_content %>
+
 <hr>
 <% @approval = approval %>
-<% unless Review.find_by(approval_id: @approval.id) %>
+<% if !Review.find_by(approval_id: @approval.id) %>
 <%= form_for [@approval,@approval.reviews.new], url: new_approval_review_path(@approval), html: {method: "get"} do |f| %>
   <%= f.hidden_field :approval_id, value: @approval.id %>
   <%= f.hidden_field :reviwed_user_id, value: @approval.proposal.user.id %>
-  <div class="actions">
+  <div class="actions pull-right">
     <%= f.submit "レビューする", class: "btn btn-danger"%>       
   </div>
   <% end %>
+  <% else %>
+  <div class="pull-right blue">
+    取引完了済み
+  </div>
+  
 
 <% end %> 
 </div>

@@ -4,14 +4,12 @@
 <div class="container-fluid">
   <div class="row o-3column">
     <div class="col-md-3">
-      <div class="box">
-        <h2>サイドバー１</h2>         
-      </div> 
+      
     </div>
 
     <div class="col-md-6 col-md-offset-1">
       <div class="panel panel-default">
-<div class="panel-heading">
+    <div class="panel-heading">
         <%= link_to user_path(@proposal.user) do %>
                         <%= image_tag @proposal.user.image,class:"img-circle profile-0" %>
                     &nbsp;
@@ -38,15 +36,24 @@
     </div>
 
     <div class="col-md-2">
-      <div class="box">
+      
+      
         <!-- 編集ボタン -->
         <% if current_user == @proposal.user %>
-        <%= link_to "編集", edit_proposal_path(@proposal), class: "btn btn-primary" %>
+        <% unless Approval.find_by(proposal_id: @proposal.id) %>
+        <div class="panel panel-default">
+        <%= link_to "編集", edit_proposal_path(@proposal), class: "btn btn-primary btn-full" %>
+        </div>
         <% end %>
+        <% end %>
+        
 
 
          <!-- 承認ボタン -->
+         
         <% if current_user == @proposal.listing.user %>
+        <% unless Approval.find_by(proposal_id: @proposal.id) %>
+        <div class="panel panel-default">
         <%= form_for [@proposal, @proposal.approvals.new] do |f| %>
 
         <%= hidden_field_tag :token %>
@@ -55,11 +62,18 @@
         <%= f.hidden_field :proposal_content, value: @proposal.proposal_content %>
         <%= f.hidden_field :proposal_price, value: @proposal.proposal_price %>
 
-        <button class='btn btn-danger pay-button'>承認する</button>                               
+        <button class='btn btn-success pay-button btn-full'>承認する</button> 
+        </div>  
+        <% end %>                            
         <% end %>
+        
+        
+        <div class="panel panel-default">
+          <%= link_to "メッセージを送る", conversations_path(sender_id: current_user.id, recipient_id: @proposal.user.id), method: 'post',class: "btn btn-danger btn-full" %>
+        </div>
         <% end %>        
-      </div>
-    </div>
+      
+    
   </div>
 </div>      
 

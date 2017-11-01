@@ -25,20 +25,25 @@
 <div class="panel-body">
 
 <p>
-<div class="pull-left link-title">
+<div class="pull-left ">
 <%= link_to user_path(proposal.listing.user) do %>
 <%= image_tag proposal.listing.user.image, class: "img-circle profile-1" %>
 <%= proposal.listing.user.name %>
 <% end %> 
 </div>
-<div class="text-center">
+<div class="text-center link-title">
 <%= proposal.listing.title %>
 </div>
 </p>
 <div class="clearfix">
 </div>
 <hr>
+<div class="pull-left">
+  <i class="fa fa-hand-paper-o" aria-hidden="true"></i>提案内容
+  </div>
+  <div class="pull-right">
 <%= link_to(proposal.proposal_content, "/proposals/#{proposal.id}") %>
+</div>
 </div>
 </div>
 <% end %>
