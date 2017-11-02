@@ -22,7 +22,46 @@
     </div>
 
     <div class="col-md-2 col-sm-2 col-xm-12">
-      
+      <div class="panel panel-default">
+          <div class="panel-body">
+            <br>
+              <div class="btn btn-warning">
+               <%= link_to "Helpを出す", new_listing_path, :style=>"color:white;" %>
+              </div>
+              <br><br>
+
+              <div class="btn btn-info">
+                <%= link_to "Find Helperを使う", "https://juvejeep21.wixsite.com/find-helper", :target=>["_blank"], :style=>"color:white;" %>
+              
+              </div>
+              <br><br>
+              
+                <%= link_to "Help!とは", about_path %>
+              <br>
+              
+                <%= link_to "ご利用の流れ", flow_path %>
+                <br><br>
+
+                <%= link_to "プライバシーポリシー", privacy_path %>
+                <br>
+                <%= link_to "利用規約", terms_path %>
+                <br>
+                <%= link_to "特定商取引法に基づく表記", law_path %>
+                <br><br>
+              
+              <ul class="list-inline social-buttons">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="mailto:help.human.trouble@gmail.com?subject=お問い合わせ"><i class="fa fa-envelope"></i></a>
+                    </li>
+                </ul>
+            
+            </div>
+                    
+                  
+         </div>
     </div>
   </div>
 </div>
