@@ -11,11 +11,17 @@
       <div class="panel panel-default">
     <div class="panel-heading">
         <%= link_to user_path(@proposal.user) do %>
-                        <%= image_tag @proposal.user.image,class:"img-circle profile-0" %>
-                    &nbsp;
-                     <%= @proposal.user.name %>
-                     <% end %>
-                    </div>
+        <%= image_tag @proposal.user.image,class:"img-circle profile-0" %>
+        &nbsp;
+        <%= @proposal.user.name %>
+        <% end %>
+        <% if Approval.find_by(proposal_id: @proposal.id) %>
+        <div class="red pull-right">
+          <i class="fa fa-check" aria-hidden="true"></i>解決済み
+        </div>
+        <% end %>
+    </div>
+    <div class="panel-body">
                     &nbsp;
                     <br>
                     <div class="icon">提案内容
@@ -33,6 +39,7 @@
                     </div>
                     <br>
                     </div>         
+    </div>
     </div>
 
     <div class="col-md-2 col-sm-2 col-xm-12">

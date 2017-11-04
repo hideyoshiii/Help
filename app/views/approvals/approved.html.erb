@@ -25,18 +25,18 @@
 <div class="panel panel-default">
 <div class="panel-body">
 <div class="pull-left">
-  承認したユーザー
+  承認したユーザー&nbsp;
 <%= link_to user_path(approval.user) do %>
 <%= image_tag approval.user.image, class: "img-circle profile-1" %>
 <%= approval.user.name %>
 <% end %>
 </div>
 <% if !Review.find_by(approval_id: approval.id) %>
-<div class="pull-right">
-取引完了済み
+<div class="pull-right red">
+<i class="fa fa-check" aria-hidden="true"></i>取引完了済み
 </div>
 <% else %>
-<div class="pull-right">
+<div class="pull-right blue">
 取引未完了
 </div>
 <% end %>

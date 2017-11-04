@@ -45,7 +45,13 @@ Help一覧
 <% likes_count = Like.where(listing_id: listing.id).count %>
 <%= likes_count %>
 </div>
-<p class="pull-left"><%= link_to "編集", edit_listing_path(listing), class: "btn btn-primary pull-right" %></p>
+<% if listing.solution == true %>
+                    <div class="pull-left red">
+                        <i class="fa fa-check" aria-hidden="true"></i>解決済み
+                    </div>
+                    <% else %>
+<p class="pull-left"><%= link_to "編集", edit_listing_path(listing), class: "btn btn-info pull-right" %></p>
+<% end %>
 </div>
 </div>
 <% end %>

@@ -9,8 +9,25 @@ class BalancesController < ApplicationController
   end
 
   def create
-    @payout = current_user.payouts.create(amount: params[:post][:amount], transfer: params[:post][:transfer])
-    redirect_to balance_path, notice:"出金の申請が完了しました"
+    @user = User.find_by(id: current_user.id)
+    @balance = @user.balance
+
+    if @balance.to_i >= params[:post][:amount].to_i
+
+      @payout = current_user.payouts.create(amount: params[:post][:amount], transfer: params[:post][:transfer])
+      redirect_to balance_path, notice:"出金の申請が完了しました"
+
+      @balance = @balance - @payout.amount
+      @user.update(balance: @balance)
+
+    else
+      redirect_to balance_path, notice:"出金申請が売上残高よりも大きかったため出金の申請が完了しませんでした"
+
+    end
+
+
+
+
   end
 
   def account

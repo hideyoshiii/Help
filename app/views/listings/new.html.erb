@@ -3,7 +3,54 @@
 <div class="container-fluid">
       <div class="row o-3column">
         <div class="col-md-3 col-sm-3 hidden-xs">
-        
+        <div class="panel panel-default">
+        	<div class="panel-body">
+        		<div class="black">
+        		<h2>Helpの作り方</h2>
+        		<br>
+        		<h4>タイトル</h4>
+        		<p>あなたがしてもらいたいことが伝わるように、簡潔なタイトルをつけましょう。</p>
+        		<p>状況に応じて【急募】などをつけると目に止まりやすくなります。</p>
+        		<br>
+        		<h4>カテゴリー</h4>
+        		<p>Help内容に適したカテゴリーを選択しましょう。</p>
+        		<br>
+        		<h4>内容</h4>
+        		<p>助けてもらいたい内容をできるだけ具体的に記入しましょう。</p>
+        		<p>
+        		（例）
+        		<br>
+        		【リクエストの詳細】
+        		<br>
+
+				【注意点・禁止事項】
+				<br>
+
+				【その他コメント】
+				<br>
+
+				不明点があれば、お気軽にご質問ください。
+				どうぞよろしくお願いいたします。</p>
+        		<br>
+        		<h4>エリア</h4>
+        		<p>直接会う必要がある場合は各都道府県を、メッセージや電話の場合はインターネットを選択しましょう</p>
+        		<br>
+        		<h4>形式</h4>
+        		<p>対面、オンライン、電話、メッセージから選択しましょう</p>
+        		<br>
+        		<h4>予算</h4>
+        		<p>予算を記入しましょう。</p>
+        		<p>相場がわからない場合は「見積もり希望」と記入しましょう。</p>
+        		<br>
+        		<h4>募集期限</h4>
+        		<p>いつまでHelpを募集するか記入しましょう。</p>
+        		<br>
+        		<h4>公開する</h4>
+        		<p>公開するか公開しないかを選ぶことができます。</p>
+        		<br>
+        		</div>
+        	</div>
+        </div>	
     </div>
         <div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xm-12">
         <div class="panel panel-default">
@@ -18,7 +65,7 @@
 							<div class="col-md-12 select">
 								<div class="form-group">
                                 <label>タイトル</label>
-                                <%= f.text_field :title, placeholder: "リスティングタイトルを記載しましょう", class: "form-control", required: "true" %>
+                                <%= f.text_field :title, placeholder: "Helpのタイトルを記載しましょう", class: "form-control", required: "true" %>
                             	</div>
 							</div>
 						</div>
@@ -38,7 +85,7 @@
 							<div class="col-md-12 select">
 								<div class="form-group">
                                 <label>内容</label>
-                                <%= f.text_area :content, rows: 8, placeholder: "リスティングの内容について記述してください", class: "form-control", required: "true" %>
+                                <%= f.text_area :content, rows: 8, placeholder: "Helpの内容について記述してください", class: "form-control", required: "true" %>
                             </div> 
 							</div>
 						</div>
@@ -95,7 +142,7 @@
             			<br>
 
 						<div class="actions">
-							<%= f.submit "保存", class: "btn btn-danger" %>
+							<%= f.submit "保存する", class: "btn btn-warning" %>
 						</div>
 					<% end %>
 				</div>

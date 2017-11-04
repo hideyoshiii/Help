@@ -15,12 +15,12 @@
                     &nbsp;
                      <%= @listing.user.name %>
                      <% if @listing.solution == true %>
-                    <div class="pull-right blue">
-                        解決済み
+                    <div class="pull-right red">
+                        <i class="fa fa-check" aria-hidden="true"></i>解決済み
                     </div>
                     <% end %>
         </div>
-                  
+                  <div class="panel-body">
                     
                     &nbsp;
                     <br>
@@ -76,11 +76,12 @@
                     &nbsp;
 
                     
-       
+       </div>
          </div>
     </div>
         <div class="col-md-2 col-sm-2 col-xm-12">
-        <div class="box">
+        <div class="panel panel-default">
+            <div class="panel-body">
           <% if Like.find_by(user_id: @current_user.id, listing_id: @listing.id) %>
         <%= link_to("/likes/#{@listing.id}/destroy", {method: "post"}) do %>
           <span class="fa fa-heart like-btn-unlike fa-4x"></span>
@@ -97,13 +98,15 @@
       <br><br>
 
       <% if current_user != @listing.user %>
+      <% if @listing.solution != true %>
       <%= link_to("/listings/#{@listing.id}/proposals/new") do %>
           <span class="fa fa-hand-paper-o hand-btn fa-4x"></span>
         <% end %>
         提案する
+        <% end %>
     <% end %>
     
-                  
+             </div>     
          </div>
     </div>
       </div>

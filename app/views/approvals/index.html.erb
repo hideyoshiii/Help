@@ -44,12 +44,12 @@
   <%= f.hidden_field :approval_id, value: @approval.id %>
   <%= f.hidden_field :reviwed_user_id, value: @approval.proposal.user.id %>
   <div class="actions pull-right">
-    <%= f.submit "レビューする", class: "btn btn-danger"%>       
+    <%= f.submit "レビューをして取引を完了する", class: "btn btn-danger"%>       
   </div>
   <% end %>
   <% else %>
-  <div class="pull-right blue">
-    取引完了済み
+  <div class="pull-right red">
+    <i class="fa fa-check" aria-hidden="true"></i>取引完了済み
   </div>
   
 
