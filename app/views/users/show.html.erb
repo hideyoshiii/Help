@@ -21,14 +21,16 @@
 
       <div class="text-center">                      
       <p><%= image_tag @user.image, class: "profile-2 img-circle" %></p>
-      <p class="user-name-2"><%= @user.name %></p>
-			<p class="user-description-2"><%= @user.description %></p>
+      <p class="user-name-2 black"><%= @user.name %></p>
+			<p class="user-description-2 black"><%= @user.description %></p>
       </div> 
 
 
-      <div class="panel panel-default background">
+      
 　　　　<div class="panel-heading">
-        このユーザーのHelp
+        <div class="black">
+        [ このユーザーのHelp ]
+        </div>
         </div> 
        <% @user.listings.each do |listing| %>
        <div class="panel panel-default">
@@ -67,7 +69,7 @@
         </div>
         </div>
         <% end %>
-     </div>
+     
      </div>
 
     

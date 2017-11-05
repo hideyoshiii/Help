@@ -16,9 +16,11 @@
     </div> 
     </div>
 <div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xm-12">
-<div class="panel panel-default background">
+
 <div class="panel-heading">
-承認された
+  <div class="black">
+[ 承認された ]
+</div>
 </div>
 <% @proposals.each do |proposal| %>
 <% proposal.approvals.each do |approval| %>
@@ -53,7 +55,7 @@
 </div>
 <% end %>
 <% end %>
-</div>
+
 </div>
         <div class="col-md-2 col-sm-2 col-xm-12">
         
