@@ -36,77 +36,132 @@
       <h4 class="search-box black"><i class="fa fa-bookmark-o" aria-hidden="true"></i>カテゴリー</h4>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "ビジネス",session[:Business] %> ビジネス
+        <%= check_box_tag "q[category_eq_any][]", "執筆代行",session[:Wrinting] %> 執筆代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "企画",session[:Plan] %> 企画
+        <%= check_box_tag "q[category_eq_any][]", "読書代行",session[:Reading] %> 読書代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "グルメ",session[:Gourmet]%> グルメ
+        <%= check_box_tag "q[category_eq_any][]", "調べもの代行",session[:Investigate]%> 調べもの代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "写真",session[:Picture]%> 写真
+        <%= check_box_tag "q[category_eq_any][]", "ゲーム代行",session[:Gaming]%> ゲーム代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "占い",session[:Fortune] %> 占い
+        <%= check_box_tag "q[category_eq_any][]", "パチンコ行列代行",session[:Pachinko] %> パチンコ行列代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "恋愛",session[:Love] %> 恋愛
+        <%= check_box_tag "q[category_eq_any][]", "飲食店行列代行",session[:Food] %> 飲食店行列代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "プログラミング",session[:Programming]%> プログラミング
+        <%= check_box_tag "q[category_eq_any][]", "話し相手代行",session[:Consultation]%> 話し相手代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "パフォーマンス",session[:Performance]%> パフォーマンス
+        <%= check_box_tag "q[category_eq_any][]", "彼氏彼女代行",session[:Girlfriend]%> 彼氏彼女代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "語学",session[:Language] %> 語学
+        <%= check_box_tag "q[category_eq_any][]", "夫婦代行",session[:Couple] %> 夫婦代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "フリートーク",session[:Talk] %> フリートーク
+        <%= check_box_tag "q[category_eq_any][]", "友達代行",session[:Friends] %> 友達代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "お手伝い",session[:Maid]%> お手伝い
+        <%= check_box_tag "q[category_eq_any][]", "ペットの世話代行",session[:Walk]%> ペットの世話代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "心の悩み",session[:Heart]%> 心の悩み
+        <%= check_box_tag "q[category_eq_any][]", "掃除代行",session[:Clean]%> 掃除代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "健康",session[:Healthy] %> 健康
+        <%= check_box_tag "q[category_eq_any][]", "買い物代行",session[:Shopping] %> 買い物代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "お金",session[:Money] %> お金
+        <%= check_box_tag "q[category_eq_any][]", "墓参り代行",session[:Grave] %> 墓参り代行
         </label>
       </div>
       <div class="col-md-12">
         <label>
-        <%= check_box_tag "q[category_eq_any][]", "生き方",session[:Life]%> 生き方
+        <%= check_box_tag "q[category_eq_any][]", "引っ越し代行",session[:Moving]%> 引っ越し代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "料理代行",session[:Cuisine]%> 料理代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "介護代行",session[:Care] %> 介護代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "エキストラ代行",session[:Extra] %> エキストラ代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "旅行プラン作成代行",session[:Trip]%> 旅行プラン作成代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "デートプラン作成代行",session[:Dating]%> デートプラン作成代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "プラモデル作成代行",session[:Plastic]%> プラモデル作成代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "宿題代行",session[:Homework]%> 宿題代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "動画編集・作成代行",session[:Movie] %> 動画編集・作成代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "資料作成代行",session[:Document] %> 資料作成代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "店決め・予約代行",session[:Reservation]%> 店決め・予約作成代行
+        </label>
+      </div>
+      <div class="col-md-12">
+        <label>
+        <%= check_box_tag "q[category_eq_any][]", "その他代行",session[:Other]%> その他代行
         </label>
       </div>
       </div>

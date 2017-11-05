@@ -1,22 +1,23 @@
 
 
-<div class="panel-heading">
-	<div class="black">
-[ Help一覧 ]
-</div>
-</div>
+
 <% if @arrlistings  %>
 <% @arrlistings.each do |listing| %>
 <div class="panel panel-default">
 <div class="panel-body">
+<div class="row">
+<div class="col-md-2">
 <%= link_to listing do %>
-<p>
-<div class="pull-left link-title">
+<div class="text-center">
 <%= image_tag listing.user.image,class:"img-circle profile-1" %>
-&nbsp;&nbsp;
+</div>
+</div>
+<div class="col-md-10">
+<div class="pull-left link-title">
 <%= listing.title %>
 </div>
-</p>
+</div>
+</div>
 <% end %> 
 <div class="clearfix">
 </div>

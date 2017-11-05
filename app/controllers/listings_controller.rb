@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.build(listing_params)
 
     if @listing.save
-      redirect_to search_path, notice: "Helpを出しました"
+      redirect_to root_path, notice: "Helpを出しました"
     else
       redirect_to new_listing_path, notice: "Helpを出せませんでした"
     end

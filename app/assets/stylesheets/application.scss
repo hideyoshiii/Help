@@ -7,8 +7,9 @@
 .navbar-devise {
     background: #FF9933;
     border-color: #FF9933;
-    opacity:.9;
+    
     z-index: 10;
+    box-shadow: 5px 5px 5px #999;
 }
 
 .navbar-devise .navbar-brand {
@@ -172,21 +173,24 @@ ul.social-buttons li a {
 // 諸設定
 .title{
   text-align: center;
-  padding-bottom:75px;
+  padding-bottom:30px;
+  padding-top:10px;
 }
 
 
 
 .contents{
   padding:27px 200px;
-  text-align:center;
-  font-size:40px;
+  text-align:left;
 }
 
 .contents li{
   padding-bottom:13px;
 }
 
+.contents h4{
+  font-size:20px;
+}
 
 .main-contents{
   margin-top:50px;

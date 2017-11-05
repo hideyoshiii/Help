@@ -47,38 +47,63 @@ class PagesController < ApplicationController
 
       if params[:q][:category_eq_any].present?
         session[:category_eq_any] = params[:q][:category_eq_any]
-        session[:Business] = session[:category_eq_any].include?("ビジネス")
-        session[:Plan] = session[:category_eq_any].include?("企画")
-        session[:Gourmet] = session[:category_eq_any].include?("グルメ")
-        session[:Picture] = session[:category_eq_any].include?("写真")
-        session[:Fortune] = session[:category_eq_any].include?("占い")
-        session[:Love] = session[:category_eq_any].include?("恋愛")
-        session[:Programming] = session[:category_eq_any].include?("プログラミング")
-        session[:Performance] = session[:category_eq_any].include?("パフォーマンス")
-        session[:Language] = session[:category_eq_any].include?("語学")
-        session[:Talk] = session[:category_eq_any].include?("フリートーク")
-        session[:Maid] = session[:category_eq_any].include?("お手伝い")
-        session[:Heart] = session[:category_eq_any].include?("心の悩み")
-        session[:Healthy] = session[:category_eq_any].include?("健康")
-        session[:Money] = session[:category_eq_any].include?("お金")
-        session[:Programming] = session[:category_eq_any].include?("生き方")
+        session[:Wrinting] = session[:category_eq_any].include?("執筆代行")
+        session[:Reading] = session[:category_eq_any].include?("読書代行")
+        session[:Investigate] = session[:category_eq_any].include?("調べもの代行")
+        session[:Gaming] = session[:category_eq_any].include?("ゲーム代行")
+        session[:Pachinko] = session[:category_eq_any].include?("パチンコ行列代行")
+        session[:Food] = session[:category_eq_any].include?("飲食店行列代行")
+        session[:Consultation] = session[:category_eq_any].include?("話し相手代行")
+        session[:Girlfriend] = session[:category_eq_any].include?("彼氏彼女代行")
+        session[:Couple] = session[:category_eq_any].include?("夫婦代行")
+        session[:Friends] = session[:category_eq_any].include?("友達代行")
+        session[:Walk] = session[:category_eq_any].include?("ペットの世話代行")
+        session[:Clean] = session[:category_eq_any].include?("掃除代行")
+        session[:Shopping] = session[:category_eq_any].include?("買い物代行")
+        session[:Grave] = session[:category_eq_any].include?("墓参り代行")
+        session[:Moving] = session[:category_eq_any].include?("引っ越し代行")
+        session[:Cuisine] = session[:category_eq_any].include?("料理代行")
+        session[:Care] = session[:category_eq_any].include?("介護代行")
+        session[:Extra] = session[:category_eq_any].include?("エキストラ代行")
+        session[:Trip] = session[:category_eq_any].include?("旅行プラン作成代行")
+        session[:Dating] = session[:category_eq_any].include?("デートプラン作成代行")
+        session[:Plastic] = session[:category_eq_any].include?("プラモデル作成代行")
+        session[:Homework] = session[:category_eq_any].include?("宿題代行")
+        session[:Movie] = session[:category_eq_any].include?("動画編集・作成代行")
+        session[:Document] = session[:category_eq_any].include?("資料作成代行")
+        session[:Reservation] = session[:category_eq_any].include?("店決め・予約代行")
+        session[:Other] = session[:category_eq_any].include?("その他代行")
+        
       else
         session[:category_eq_any] = ""
-        session[:Business] = false
-        session[:Plan] = false
-        session[:Gourmet] = false
-        session[:Picture] = false
-        session[:Fortune] = false
-        session[:Love] = false
-        session[:Programming] = false
-        session[:Performance] = false
-        session[:Language] = false
-        session[:Talk] = false
-        session[:Maid] = false
-        session[:Heart] = false
-        session[:Healthy] = false
-        session[:Money] = false
-        session[:Life] = false
+        session[:Wrinting] = false
+        session[:Reading] = false
+        session[:Investigate] = false
+        session[:Gaming] = false
+        session[:Pachinko] = false
+        session[:Food] = false
+        session[:Consultation] = false
+        session[:Girlfriend] = false
+        session[:Couple] = false
+        session[:Friends] = false
+        session[:Walk] = false
+        session[:Clean] = false
+        session[:Shopping] = false
+        session[:Grave] = false
+        session[:Moving] = false
+        session[:Cuisine] = false
+        session[:Care] = false
+        session[:Extra] = false
+        session[:Trip] = false
+        session[:Dating] = false
+        session[:Plastic] = false
+        session[:Homework] = false
+        session[:Movie] = false
+        session[:Document] = false
+        session[:Reservation] = false
+        session[:Other] = false
+        
+        
       end
 
 

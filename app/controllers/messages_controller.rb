@@ -19,6 +19,9 @@ class MessagesController < ApplicationController
     @message = @conversation.messages.new(message_params)
     @messages = @conversation.messages.order("created_at DESC")
 
+    @notification = Notification.new(user_id: @conversation.recipient.id, content: "あなたへメッセージが届きました", read: false)
+    @notification.save
+
     if @message.save
       #create.js.erb　が実行される
       respond_to do |format|
